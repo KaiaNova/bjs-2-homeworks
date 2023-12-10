@@ -1,24 +1,22 @@
 "use strict"
 function solveEquation(a, b, c) {
   let arr = [];
-  let d = b**2 - 4*a*c;
-  let x1;
-  let x2;
-
-  if (d === 0) {
-    x1 = - b / (2*a);
-    arr.push(x1);
-    
-  } else if (d > 0) {
-    x1 = (- b + Math.sqrt(d)) / (2*a);
-    x2 = (- b - Math.sqrt(d)) / (2*a);
-    arr.push(x1,x2);
-  }
-
-  return arr;
+  let D = Math.pow(b, 2) - 4 * a * c;
+  if (D === 0) {
+    arr[0] = -b / (2 * a);
+  } else if (D > 0) {
+    arr[0] = (-b + Math.sqrt(D)) / (2 * a);
+    arr[1] = (-b - Math.sqrt(D)) / (2 * a);
+  };
+  
+  return arr; 
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  
+  let P = (percent / 100) / 12;
+  let S = amount - contribution;
+  let payment = S * (P + (P / (((1 + P)**countMonths) - 1)));
+  return Number((payment * countMonths).toFixed(2));
+
 }
-console.log(solveEquation());
+
