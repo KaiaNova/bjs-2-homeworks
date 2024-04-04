@@ -4,7 +4,7 @@ class PrintEditionItem {
 
 	constructor(name, releaseDate, pagesCount) {
 		this.name = name;
-		this.releaseDate = releaseDate;
+		this.releaseDate = releaseDate; 
 		this.pagesCount = pagesCount;
 	}
 
@@ -53,7 +53,7 @@ class DetectiveBook extends Book {
 }
 
 
-// 2 задача
+// 2 
 class Library {
 	books = [];
 
@@ -82,7 +82,7 @@ class Library {
 	}
 }
 
-// 3 задача
+// 3 
 class Student {
 	marks = {};
 
@@ -112,7 +112,7 @@ class Student {
 			let sum = this.marks[discipline].reduce((acc, item) => acc += item);
 			return sum / this.marks[discipline].length
 		} else if (this.marks[discipline] != undefined || this.marks[discipline].length === 0) {
-			return console.log('оценок нет');
+			return console.log('Оценок нет');
 		} else {
 			return console.log(`Предмета ${discipline} не существует`);
 		}
